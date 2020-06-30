@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+function message() {
+  alert("This alert box was triggered by the onreset event handler");
+}
+function myFunction() {
+  document.getElementById("click").innerHTML = "SERC RDIP";
+}
+
+function fib(){
+
+	var x1=0;
+	var x2=1;
+	var x3;
+	var num=parseInt(document.getElementById("series").value);
+	while(num){
+		document.write(x1+" ");
+		x3=x1+x2; 
+		x1=x2;
+		x2=x3;
+		num-=1;
+	}
+}
+function error() {
+  var message, x;
+  message = document.getElementById("err");
+  message1 = document.getElementById("err1");
+  x = document.getElementById("num2").value;
+  try { 
+    if(x == "")  throw "is empty";
+    if(isNaN(x)) throw "is not a number";
+    x = Number(x);
+    if(x > 20)   throw "is too high";
+    if(x < 10)  throw "is too low";
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+  finally {
+    message1.innerHTML= "Finally block executed;"
+  }
+}
+function count(){
+    var five=document.getElementById("a1")
+    var seven=document.getElementById("a2")
+    var ten=document.getElementById("a3")
+    var des="JavaScript is a programming language commonly used in web development.It was orginally developed by nescafe as a means to add dynamic and interactive elements to websites.JavaScriptcan be inserted anywhere within the HTML of a webpage";
+    var res=des.split("");
+    var fif=res[6];
+    var sev=res[8];
+    var tenth=res[11];
+    five.innerHtml="<h4>5<sup>th</sup>word:"+fif+"</h4>";
+    seven.innerHtml="<h4>7<sup>th</sup>word:"+sev+"</h4>";
+    ten.innerHtml="<h4>10<sup>th</sup>word:"+tenth+"</h4>";
+}
+function bet() {
+        var no = parseInt(document.getElementById("bet").value);
+        if (no <= 100 && no >= 10) {
+          alert("Number is  in the Range(10 - 100)");
+        } else {
+          alert("Number is not the Range(10 - 100)");
+        }
+      }
+</script>
+</head>
+<body>
+	<p id="demo"></p>
+  <script>
+    var d= Date();
+    document.getElementById("demo").innerHTML=d;
+    console.log(d);
+
+</script>
+<hr>
+<form onreset="message()">
+  Enter your name: <input type="text" size="20">
+  <input type="reset">
+</form>
+<hr>
+<h1 onmouseover="style.color='pink'" onmouseout="style.color='black'">Mouse over this text changes the colour</h1>
+<p ondblclick="myFunction()">Doubleclick this paragraph to trigger a function.</p>
+<hr>
+<p id="click"></p>
+<hr>
+<h4>Fibonacci series</h4>
+Enter number:<input type="text" id="series">
+<button onclick="fib()">Generate</button>
+<hr>
+<h4>Enter a number between 10 and 20:</h4>
+	<input type="text" id="num2">
+	<button  onclick="error()">Test the input</button>
+  <hr>
+	<p id="err"></p>
+  <p id="err1"></p>
+  <h4>Check Number is Between 10 - 100</h4>
+    ENTER NUMBER:
+    <input type="text" id="bet" />
+    <button onclick="bet()">Check</button>
+    <hr>
+    <p id="count">
+         "JavaScript is a programming language commonly used in web development.It was orginally developed by nescafe as a means to add dynamic and interactive elements to websites.JavaScriptcan be inserted anywhere within the HTML of a webpage";
+       </p>
+       <button onclick="count()">Click</button><br />
+    <span id="a1"></span>
+    <span id="a2"></span>
+    <span id="a3"></span>
+</body>
+</html> 
+
