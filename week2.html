@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<style>
+		table,th,td{
+			border-collapse: collapse;
+			width=50%;
+			border:1px solid black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+<h2>JavaScript Variables</h2>
+<button onclick="data()">Click to know what i learned</button>
+<table id="table1" border="1">
+<tr>
+<th>Subjects</th>
+<th>marks</th>
+</tr>
+<tr><td>Signals and sysytems</td>
+<td>80</td></tr>
+<tr><td>Mathematics</td>
+<td>85</td></tr>
+<tr><td>Digital Signal Processing</td>
+<td>76</td></tr>
+<tr><td>Probablitity theory and random processes</td>
+<td>92</td></tr>
+</table>
+<h4 id="tot"></h4>
+<h4 id="avg"></h4>
+<p id="demo"></p>
+<p>a=[1,2,3,4,5];</p>
+<script>
+//Document your understanding
+	function data(){
+		document.write("<h3>JavaScript is a programming language commonly used in web development.It was orginally developed by nescafe as a means to add dynamic and interactive elements to websites.JavaScriptcan be inserted anywhere within the HTML of a webpage")
+	}
+	var x=9;
+	var person="john"
+	var y=[1,2,3,4,5]
+	console.log(x);
+	console.log(person);
+//function calling
+	function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5, 2));
+// expected output: 10
+
+console.log(multiply(5));
+// expected output: 5
+ 
+
+//conversion to sting
+	a=[1,2,3,4,5];
+	document.write("<h4>Element at index 3 :"+ typeof a[3].toString()+"</h4>")
+
+//table
+var table=document.getElementbyID("table1");
+sumVal=0;
+c=0;
+for(var i=1;i<table.rows.length;i++)
+{
+c=c+1
+sumVal=sumVal+parselnt(table.rows[i].cells[1].innerHTML);
+}
+document.getElementbyID("tot").innerHTML="Total=" + sumVal;
+document.getElementbyID("avg").innerHTML="avg=" + sumVal/c;
+<!--math operations-->
+
+      
+      document.write ( "<h4>random number := " +rand+"</h4>");function pow(){
+        var num = parseInt(document.getElementById('num').value);
+        var pow = parseInt(document.getElementById('power').value);
+      r=Math.pow(num,pow)
+      document.write ( "<h4>power("+num+" , "+pow+") =" +r+"</h4>");
+    return true;
+      }
+
+
+      function sqrt(){
+        var num = parseInt(document.getElementById('num1').value);
+      r=Math.sqrt(num)
+      document.write ( "<h4>sqrt("+num+") =" +r+"</h4>");
+    return true;
+      }
+      
+      function abs(){
+        var num = parseInt(document.getElementById('num2').value);
+      r=Math.abs(num)
+      document.write ( "<h4>abs("+num+") =" +r+"</h4>");
+    return true;
+      }
+
+
+       
+      function rand(){
+        var rand=Math.random();
+
+      document.write ( "<h4>multiply by 100 := " +(rand*100)+" </h4>");
+      document.write ( "<h4>floor  := " +Math.floor(rand*100)+" </h4>");
+      document.write ( "<h4>ceil := " +Math.ceil(rand*100)+" </h4>");
+      document.write ( "<h4>cos() := " +Math.cos(rand*100)+" </h4>");
+      document.write ( "<h4>sin() := " +Math.sin(rand*100)+" </h4>");
+    return true;
+      }
+</script>
+  
+    <hr>
+    <h3><u>Math operations</u></h3>
+    
+    <h4>power of numbers</h4>
+
+    Enter Number :<input type="text" id="num"/>&nbsp;&nbsp;
+    Enter Power :<input type="text" id="power"/>&nbsp;
+<input type="submit" name="submit" value="CLICK" onclick="pow()" />
+<h4>square root of number</h4>
+Enter Number :<input type="text" id="num1"/>&nbsp;&nbsp;
+<input type="submit" name="submit" value="CLICK" onclick="sqrt()" />
+<h4>Absolute Number</h4>
+Enter Number :<input type="text" id="num2"/>&nbsp;&nbsp;
+<input type="submit" name="submit" value="CLICK" onclick="abs()" />
+<h4>random Number</h4>
+<input type="submit" name="submit" value="Generate" onclick="rand()" />
+<!--Alphabets only-->
+<script>
+function letter()
+      { 
+        var inputtxt = document.getElementById('text1').value;
+        var letters = /^[A-Za-z]+$/;
+      if(inputtxt.match(letters))
+      {
+      alert('Your name have accepted :');
+      
+      }
+      else
+      {
+      alert('Please input alphabet characters only'); 
+      }}
+</script>
+</body>
+</html>
