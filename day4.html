@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Double Click</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</script>
+<script> 
+$(document).ready(function(){
+  $("div").dblclick(function(){
+    $( this ).toggleClass("divClass1");
+  });
+});
+$(document).ready(function(){
+  $("#button1").click(function(){
+    $("#fade1").fadeIn();
+    $("#fade2").fadeIn("slow");
+    $("#fade3").fadeIn(3000);
+  });
+});
+$(document).ready(function(){
+  $("#button2").click(function(){
+    $("#out1").fadeOut();
+    $("#out2").fadeOut("slow");
+    $("#out3").fadeOut(3000);
+  });
+});
+$(document).ready(function() { 
+            $("button3").click(function() { 
+                $("#gfg").toggle(); 
+            }); 
+        });
+$(document).ready(function(){
+  $("#button4").click(function(){
+    $.post("demo.asp",
+    {
+      name: "Donald Duck",
+      city: "Duckburg"
+    },
+    function(data,status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});         
+</script>
+ 
+<style> 
+.divClass1
+{
+    padding:5px;
+    text-align:center;
+    background-color:lightblue;
+    border:solid 1px;
+}
+
+</style>
+</head>
+<body>
+<div class="divClass1">Double Click</div><br><br><br>
+
+
+<button id="button1">Click to fade in boxes</button><br><br>
+
+
+<div id="fade1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="fade2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="fade3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+<button id="button2">Click to fade out boxes</button><br><br>
+
+
+<div id="out1" style="width:80px;height:80px;background-color:pink;"></div><br>
+<div id="out2" style="width:80px;height:80px;background-color:yellow;"></div><br>
+<div id="out3" style="width:80px;height:80px;background-color:black;"></div><br><br><br>
+<button id="button3">Click to hide and show the above element</button><br>
+<div id="gfg" color:pink;border: 5px solid black;width:200px;text-align: center;>Toggle between hide and show</div>
+<button id="button4">Send an HTTP POST request to a page and get the result back</button> 
+</body>
+</html>
+
